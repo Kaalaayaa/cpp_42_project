@@ -1,21 +1,23 @@
 #include "ft_sed.hpp"
 
-void ft_sed (std::string filename, std::string s1, std::string s2)
+bool ft_sed(std::string filename, std::string s1, std::string s2)
 {
     if(s1.empty())
-        return;
+    {
+        std::cerr << "Error: s1 must not be empty" << std::endl;
+        return false;
+    }
     std::ifstream input(filename);
-    std::ofstream output(filename + ".replace");
-
     if(!input)
     {
-        std::cerr << "Error opening file" << std::endl;
-        return;
+        std::cerr << "Error: cannot open file " << filename << std::endl;
+        return false;
     }
+    std::ofstream output(filename + ".replace");
     if(!output)
     {
-        std::cerr << "Error creating file" << std::endl;
-        return;
+        std::cerr << "Error: cannot create file " << filename << ".replace" << std::endl;
+        return false;
     }
     std::string line;
     while(std::getline(input, line))
@@ -32,4 +34,5 @@ void ft_sed (std::string filename, std::string s1, std::string s2)
         if(!input.eof())
             output << '\n';
     }
+    return true;
 }

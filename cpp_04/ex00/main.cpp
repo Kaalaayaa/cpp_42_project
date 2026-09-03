@@ -41,14 +41,6 @@ int main(void)
     Cat cat2;
     cat2 = cat1;
     cat2.makeSound();
-
-    std::cout << "\n=== Stack allocation tests ===" << std::endl;
-    Animal animal;
-    Dog dog;
-    Cat cat;
-
-    animal.makeSound();
-    dog.makeSound();
-    cat.makeSound();
+    
     return 0;
 }

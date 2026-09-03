@@ -8,6 +8,7 @@ int main(int ac, char **av)
         std::cerr << "Usage: ./program <filename> <s1> <s2>" << std::endl;
         return 1;
     }
-    ft_sed(av[1], av[2], av[3]);
+    if(!ft_sed(av[1], av[2], av[3]))
+        return 1;
     return 0;
 }

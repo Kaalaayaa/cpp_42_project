@@ -5,6 +5,6 @@
 #include <string>
 #include <fstream>
 
-void ft_sed(std::string file, std::string s1, std::string s2);
+bool ft_sed(std::string file, std::string s1, std::string s2);
 
 #endif
