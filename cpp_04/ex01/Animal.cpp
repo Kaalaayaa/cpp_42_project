@@ -7,13 +7,12 @@ Animal::Animal() : type("Default")
 
 Animal::Animal(std::string type) : type(type)
 {
-    std::cout << "Animal type constructor called" << std::endl;
+    std::cout << "Animal name constructor called" << std::endl;
 }
 
-Animal::Animal(const Animal& other)
+Animal::Animal(const Animal& other) : type(other.type)
 {
     std::cout << "Animal copy constructor called" << std::endl;
-    *this = other;
 }
 
 Animal &Animal::operator=(const Animal& other)

@@ -7,7 +7,6 @@
 
 int main(void)
 {
-    std::cout << "=== Animal polymorphism tests ===" << std::endl;
     const Animal* meta = new Animal();
     const Animal* j = new Dog();
     const Animal* i = new Cat();
@@ -22,7 +21,7 @@ int main(void)
     delete j;
     delete i;
 
-    std::cout << "\n=== WrongAnimal/WrongCat tests ===" << std::endl;
+    std::cout << "\nWrongAnimal/WrongCat tests" << std::endl;
     const WrongAnimal* wrongMeta = new WrongAnimal();
     const WrongAnimal* wrongCat = new WrongCat();
 
@@ -33,7 +32,7 @@ int main(void)
     delete wrongMeta;
     delete wrongCat;
 
-    std::cout << "\n=== Copy and assignment tests ===" << std::endl;
+    std::cout << "\n Copy + assigment" << std::endl;
     Dog dog1;
     Dog dog2(dog1);
     dog2.makeSound();
@@ -51,7 +50,5 @@ int main(void)
     animal.makeSound();
     dog.makeSound();
     cat.makeSound();
-
-    std::cout << "\n=== Done ===" << std::endl;
     return 0;
 }
